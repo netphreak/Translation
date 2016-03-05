@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("Import", "Home", FormMethod.Post, new {enctype = "multipart/form-data", role = "form", id = "frmImport"}))
+{
+	<div class="form-group">
+		@Html.Label("Filename", new { @class = "control-label"})
+		<div class="input-group">
+			<span class="input-group-btn">
+				<span class="btn btn-info btn-file">
+					Browse
+					<input type="file" id="ImportedFile" name="ImportedFile" accept="text" />
+				</span>
+			</span>
+			@Html.TextBox("Filename", null, new { @class = "form-control file-display", style = "min-width:180px", @readonly = "readonly" })
+		</div>
+	</div>
+}
